@@ -1,0 +1,28 @@
+from abc import ABC, abstractmethod
+
+class FiguraGeometrica(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimetro(self):
+        pass
+
+
+class Rectangulo(FiguraGeometrica):
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+
+    def area(self):
+        return self.ancho * self.alto
+
+    def perimetro(self):
+        return 2 * (self.ancho + self.alto)
+
+
+# Ejemplo de uso
+rectangulo = Rectangulo(8, 5)
+print("Área del rectángulo:", rectangulo.area())
+print("Perímetro del rectángulo:", rectangulo.perimetro())
